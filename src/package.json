@@ -3,8 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "globals": {
+      "__DEBUG__": false,
+      "process.env": {
+        "NODE_ENV": "testing"
+      }
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "webpack-dev-server --inline --hot",
+    "test": "jest --coverage",
+    "test-watch": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
